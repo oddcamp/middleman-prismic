@@ -1,8 +1,5 @@
 # MiddlemanPrismic
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/middleman_prismic`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -20,9 +17,42 @@ Or install it yourself as:
 
     $ gem install middleman_prismic
 
-## Usage
+## Configuration
 
-TODO: Write usage instructions here
+To configure the extension, add the following configuration block to Middleman's config.rb:
+
+
+Parameter     | Description
+----------    |------------
+api_url       | the single endpoint of your content repository
+access_token  | Prismic API OAuth2 based access token (optional)
+release       | The content release (optional, defaults to `master`)
+link_resolver | A link resolver. Expects a proc with one param, which is an object of type [Prismic::Fragments::DocumentLink](http://www.rubydoc.info/github/prismicio/ruby-kit/master/Prismic/Fragments/DocumentLink) (optional)
+
+For instance:
+
+```ruby
+activate :prismic do |f|
+  f.api_url = 'https://testrepositorymiddleman.prismic.io/api'
+  f.release = 'master'
+  f.link_resolver = ->(link) { binding.pry; "#{link.type.pluralize}/#{link.slug}"}
+  f.custom_queries = { test: [Prismic::Predicates::at('document.type', 'product')] }
+end
+```
+
+## Usage
+Run `bundle exec middleman prismic` in your terminal. This will fetch entries for the configured
+spaces and content types and put the resulting data in the [local data folder](https://middlemanapp.com/advanced/local-data/) as yaml files.
+
+For each document mask you have, you will get a file named `prismic_{document-name}` under `/data`.
+So for instance if you have article and product document masks, you will get 2 files: `prismic_articles`, `prismic_products`.
+Each file will contain all your documents of the specified document mask in an array.
+
+
+In your templates, you get for free helper methods named after your document mask that return the Prismic equivelant object.
+For instance for articles, if you run `<%= articles %>` you get back a `Prismic::Document`.
+
+If at any time need access to `Prismic::Ref` you can do it using the `reference` helper.
 
 ## Development
 

@@ -26,7 +26,7 @@ module MiddlemanPrismic
     helpers do
       Dir["data/prismic_*"].each do |file|
         define_method(file.gsub('data/prismic_','')) do
-          YAML::load(File.read(file))
+          YAML::load(File.read(file)).values
         end
       end
 

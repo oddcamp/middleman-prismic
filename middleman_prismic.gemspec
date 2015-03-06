@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "middleman", "~> 3.3"
   spec.add_dependency "middleman-core", "~> 3.3"
+  spec.add_dependency "prismic.io", "~> 1.1"
 
   spec.add_development_dependency "bundler", "~> 1.8"
   spec.add_development_dependency "rake", "~> 10.0"

@@ -1,4 +1,5 @@
 require 'yaml'
+require 'fileutils'
 
 module Middleman
   module Cli
@@ -30,6 +31,8 @@ module Middleman
       def prismic
         ::Middleman::Application.server.inst
         reference = MiddlemanPrismic.options.release
+
+        Dir.mkdir('data') unless File.exists?('data')
 
         FileUtils.rm_rf(Dir.glob('data/prismic_*'))
 

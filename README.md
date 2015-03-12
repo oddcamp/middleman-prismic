@@ -1,4 +1,4 @@
-# MiddlemanPrismic
+# Middleman Prismic
 
 
 ## Installation
@@ -6,7 +6,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'middleman_prismic'
+gem 'middleman-prismic'
 ```
 
 And then execute:
@@ -15,14 +15,14 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install middleman_prismic
-
+    $ gem install middleman-prismic
+i
 ## Configuration
 
 To configure the extension, add the following configuration block to Middleman's config.rb:
 
 
-Parameter     | Description
+Parameter     |i Description
 ----------    |------------
 api_url       | the single endpoint of your content repository
 access_token  | Prismic API OAuth2 based access token (optional)
@@ -62,7 +62,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/middleman_prismic/fork )
+1. Fork it ( https://github.com/[my-github-username]/middleman-prismic/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

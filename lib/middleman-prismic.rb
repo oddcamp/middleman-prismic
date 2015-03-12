@@ -1,6 +1,6 @@
 require 'prismic'
-require 'middleman_prismic/version'
-require 'middleman_prismic/commands/prismic'
+require 'middleman-prismic/version'
+require 'middleman-prismic/commands/prismic'
 
 module MiddlemanPrismic
   class << self

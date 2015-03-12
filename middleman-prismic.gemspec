@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'middleman_prismic/version'
+require 'middleman-prismic/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "middleman_prismic"
+  spec.name          = "middleman-prismic"
   spec.version       = MiddlemanPrismic::VERSION
   spec.authors       = ["Filippos Vasilakis"]
   spec.email         = ["vasilakisfil@gmail.com"]
 
-  spec.summary       = %q{Midleman extension for Prismic}
-  spec.description   = %q{Midleman extension for Prismic}
-  spec.homepage      = "https://github.com/kollegorna/middleman_prismic"
+  spec.summary       = %q{Middleman extension for Prismic}
+  spec.description   = %q{Middleman extension for Prismic}
+  spec.homepage      = "https://github.com/kollegorna/middleman-prismic"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
